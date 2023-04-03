@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_reddit_app/core/domain/errors/failure.dart';
-import 'package:flutter_reddit_app/core/domain/usecase.dart';
+import 'package:flutter_reddit_app/core/domain/usecases/usecase.dart';
 import 'package:flutter_reddit_app/features/post/domain/entities/posts_list.dart';
 import 'package:flutter_reddit_app/features/post/domain/repositories/post_repository.dart';
 

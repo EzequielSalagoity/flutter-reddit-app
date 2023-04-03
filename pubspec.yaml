@@ -32,8 +32,9 @@ dependencies:
   equatable: ^2.0.5
   get_it: ^7.2.0
   # http
-  dio: ^5.1.1
-  dio_cache_interceptor: ^3.4.1
+  http: ^0.13.5
+  # Remote API
+  internet_connection_checker: ^1.0.0+1
   # ruteo
   # auto_route: ^5.0.4
 
