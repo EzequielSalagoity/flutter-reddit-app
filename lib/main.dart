@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_reddit_app/dependency_injection.dart'  as dependency_injector;
 
 void main() {
+  dependency_injector.init();
   runApp(const MyApp());
 }
 
