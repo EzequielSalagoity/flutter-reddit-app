@@ -15,16 +15,15 @@ class PostRepositoryImpl implements PostRepository {
 
   @override
   Future<Either<Failure, PostsList>> getPosts() async {
-    if(await networkInfo.isConnected) {
+    if (await networkInfo.isConnected) {
       try {
-      final remotePosts = await remoteDataSource.getPosts();
-      return Right(PostsList(remotePosts));
-    } on ServerException {
-      return const Left(ServerFailure("Server failure"));
-    }
+        final remotePosts = await remoteDataSource.getPosts();
+        return Right(PostsList(remotePosts));
+      } on ServerException {
+        return const Left(ServerFailure("Server failure"));
+      }
     } else {
       return const Left(NoInternetFailure("No internet failure"));
     }
-    
   }
 }

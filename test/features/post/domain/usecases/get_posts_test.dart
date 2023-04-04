@@ -12,12 +12,12 @@ import 'package:flutter_test/flutter_test.dart';
 @GenerateNiceMocks([MockSpec<PostRepository>()]) // flutter pub run build_runner build
 import 'get_posts_test.mocks.dart';
 void main() {
-  late GetPosts usecase;
+  late PostsGetter usecase;
   late MockPostRepository mockPostRepository;
 
   setUp(() {
     mockPostRepository = MockPostRepository();
-    usecase = GetPosts(mockPostRepository);
+    usecase = PostsGetter(mockPostRepository);
   });
 
   final tPost = Post(thumbnailImage: "linkTest", title: 'titleTest', author: 'authorTest', score: 1, comments: 24, dateOfCreation: DateTime(2023,1,1,8,24));

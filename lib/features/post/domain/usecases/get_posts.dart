@@ -4,10 +4,10 @@ import 'package:flutter_reddit_app/core/domain/usecases/usecase.dart';
 import 'package:flutter_reddit_app/features/post/domain/entities/posts_list.dart';
 import 'package:flutter_reddit_app/features/post/domain/repositories/post_repository.dart';
 
-class GetPosts implements UseCase<PostsList, NoParams>{
+class PostsGetter implements UseCase<PostsList, NoParams>{
   final PostRepository postRepository;
 
-  GetPosts(this.postRepository);
+  PostsGetter(this.postRepository);
 
   @override
   Future<Either<Failure,PostsList>> call(NoParams params) async {
