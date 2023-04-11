@@ -20,7 +20,7 @@ void main() {
     usecase = PostsGetter(mockPostRepository);
   });
 
-  final tPost = Post(thumbnailImage: "linkTest", title: 'titleTest', author: 'authorTest', score: 1, comments: 24, dateOfCreation: DateTime(2023,1,1,8,24));
+  final tPost = Post(thumbnailImage: "linkTest", url: "linkTest", title: 'titleTest', author: 'authorTest', score: 1, comments: 24, dateOfCreation: DateTime(2023,1,1,8,24));
 
   test(
     'should get post from the repository',

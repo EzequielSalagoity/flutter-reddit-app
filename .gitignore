@@ -45,4 +45,3 @@ app.*.map.json
 
 # Obfuscation related
 pubspec.lock
-.vscode/settings.json

@@ -8,6 +8,7 @@ void main() {
   final tPostModel = PostModel(
       thumbnailImage:
           "https://b.thumbs.redditmedia.com/-zlGHAiCDo23OjfMiAoztQV26byIKvE0NAHkazBlsnU.jpg",
+      url: "https://b.thumbs.redditmedia.com/-zlGHAiCDo23OjfMiAoztQV26byIKvE0NAHkazBlsnU.jpg",
       title: "This is a post title",
       author: "TestAuthor",
       score: 12345,
@@ -37,8 +38,8 @@ void main() {
       final result = tPostModel.toJson();
       // assert
       final expectedMap = {
-        "thumbnailImage":
-            "https://b.thumbs.redditmedia.com/-zlGHAiCDo23OjfMiAoztQV26byIKvE0NAHkazBlsnU.jpg",
+        "thumbnailImage":"https://b.thumbs.redditmedia.com/-zlGHAiCDo23OjfMiAoztQV26byIKvE0NAHkazBlsnU.jpg",
+        "url":"https://b.thumbs.redditmedia.com/-zlGHAiCDo23OjfMiAoztQV26byIKvE0NAHkazBlsnU.jpg",
         "title": "This is a post title",
         "author": "TestAuthor",
         "score": 12345,

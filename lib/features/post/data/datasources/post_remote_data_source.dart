@@ -18,7 +18,7 @@ class PostRemoteDataSourceImpl implements PostRemoteDataSource {
   @override
   Future<List<PostModel>> getPosts() async {
     final response = await client.get(
-        Uri(path: "https://api.reddit.com/r/pics/hot.json"),
+        Uri.parse( "https://api.reddit.com/r/pics/hot.json"),
         headers: {'Content-Type': 'application/json'});
     if (response.statusCode == 200) {
       // response['data']['dist'] has 25 posts

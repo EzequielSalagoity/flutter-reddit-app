@@ -33,6 +33,8 @@ void main() {
     final tPostModel = PostModel(
         thumbnailImage:
             "https://b.thumbs.redditmedia.com/-zlGHAiCDo23OjfMiAoztQV26byIKvE0NAHkazBlsnU.jpg",
+        url:
+            "https://b.thumbs.redditmedia.com/-zlGHAiCDo23OjfMiAoztQV26byIKvE0NAHkazBlsnU.jpg",
         title: "This is a post title",
         author: "TestAuthor",
         score: 12345,
@@ -68,18 +70,17 @@ void main() {
       });
 
       test(
-        'should return server failure when the call to remote data source is unsuccessful',
-        () async {
-          // arrange
-          when(mockRemoteDataSource.getPosts()).thenThrow(ServerException());
-          // act
-          final result = await repository.getPosts();
-          // assert
-          verify(mockRemoteDataSource.getPosts());
-          verifyNoMoreInteractions(mockRemoteDataSource);
-          expect(result, const Left(ServerFailure("Server failure")));
-        }
-        );
+          'should return server failure when the call to remote data source is unsuccessful',
+          () async {
+        // arrange
+        when(mockRemoteDataSource.getPosts()).thenThrow(ServerException());
+        // act
+        final result = await repository.getPosts();
+        // assert
+        verify(mockRemoteDataSource.getPosts());
+        verifyNoMoreInteractions(mockRemoteDataSource);
+        expect(result, const Left(ServerFailure("Server failure")));
+      });
     });
 
     group('device is offline', () {
@@ -87,7 +88,7 @@ void main() {
         when(mockNetworkInfo.isConnected).thenAnswer((_) async => false);
       });
 
-       test(
+      test(
           'should return no internet failure when the call to getPost is unsuccessful',
           () async {
         // act

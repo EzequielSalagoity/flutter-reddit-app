@@ -21,8 +21,9 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       GetPostsEvent event, Emitter<PostState> emit) async {
     emit(Loading());
     final postsOrFailure = await postsGetter(NoParams());
-    postsOrFailure.fold((failure) => emit(Error(_mapFailureToMessage(failure))),
-        (posts) => emit(Loaded(posts)));
+    postsOrFailure.fold(
+      (failure) => emit(Error(_mapFailureToMessage(failure))),
+      (posts) => emit(Loaded(posts)));
   }
 
   String _mapFailureToMessage(Failure failure) {

@@ -36,6 +36,8 @@ void main() {
 
   group('getPosts', () {
     final tPostModel = PostModel.fromJson(json.decode(fixture('post.json')));
+
+    // Comentar respuesta de 
     test(
         'should perform GET request on a URL with a topic being the endpoint and with application/json header',
         () async {
@@ -45,7 +47,7 @@ void main() {
       await dataSource.getPosts();
       // assert
       verify(mockHttpClient.get(
-          Uri(path: "https://api.reddit.com/r/pics/hot.json"),
+          Uri.parse("https://api.reddit.com/r/pics/hot.json"),
           headers: {'Content-Type': 'application/json'}));
     });
 

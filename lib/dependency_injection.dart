@@ -1,4 +1,5 @@
 import 'package:flutter_reddit_app/core/domain/network/network_info.dart';
+import 'package:flutter_reddit_app/core/presentation/bloc/ui_bloc/ui_bloc.dart';
 import 'package:flutter_reddit_app/features/post/data/datasources/post_remote_data_source.dart';
 import 'package:flutter_reddit_app/features/post/data/repositories/post_repository_impl.dart';
 import 'package:flutter_reddit_app/features/post/domain/repositories/post_repository.dart';
@@ -31,6 +32,8 @@ void init() {
 
   //! Core
   dependencyInjector.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(dependencyInjector()));
+   // UI Bloc
+  dependencyInjector.registerLazySingleton(() => UiBloc());
 
   //! External
   dependencyInjector.registerLazySingleton(() => http.Client());

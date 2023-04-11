@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "flutter_reddit_app_dev",
+            "request": "launch",
+            "program": "lib/main_dev.dart",
+            "type": "dart",
+            "args": [
+                "--flavor","dev",
+            ]
+        },
+        {
+            "name": "flutter_reddit_app_staging",
+            "request": "launch",
+            "program": "lib/main_staging.dart",
+            "type": "dart",
+            "args": [
+                "--flavor","staging",
+            ]
+        },
+        {
+            "name": "flutter_reddit_app_prod",
+            "request": "launch",
+            "program": "lib/main_production.dart",
+            "type": "dart",
+            "args": [
+                "--flavor","production",
+            ]
+        },
+    ]
+}
